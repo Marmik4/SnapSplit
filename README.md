@@ -1,70 +1,141 @@
-# Getting Started with Create React App
+SnapSplit 🧾
+============
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+SnapSplit is a real-time, collaborative bill-splitting web application designed to make sharing expenses painless. It leverages Google's Gemini AI to automatically scan and parse digital receipts, smart tax calculation algorithms, and Firebase for instant synchronization across devices.
 
-## Available Scripts
+*(Replace this link with a screenshot of your actual app once uploaded)*
 
-In the project directory, you can run:
+✨ Key Features
+--------------
 
-### `npm start`
+-   **🤖 AI Receipt Scanning:** Uses **Google Gemini 2.0 & 1.5 Flash** to analyze receipts, extracting items, prices, and quantities automatically. Optimized for digital receipts (Walmart, Instacart, etc.).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-   **⚡ Real-Time Collaboration:** Built on **Firebase Firestore**, allowing multiple users to join a room and see updates (claims, price changes) instantly without refreshing.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-   **📱 PWA / Installable:** Fully responsive design that can be installed on mobile devices (Android/iOS) as a native-like app.
 
-### `npm test`
+-   **🧠 Smart Tax Logic:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    -   **Smart Mode:** Distributes tax only to taxable items (e.g., distinguishing between essential groceries and taxable goods).
 
-### `npm run build`
+    -   **Proportional Mode:** Splits tax based on the subtotal amount per person.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    -   **By Item:** Splits tax based on the number of items claimed.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-   **🔗 Easy Sharing:** Share a simple 6-character room code to invite friends.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   **💰 Penny-Perfect Math:** Advanced rounding logic ensures the sum of individual splits matches the total bill exactly, distributing remainder cents fairly.
 
-### `npm run eject`
+🛠️ Tech Stack
+--------------
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-   **Frontend:** [React.js](https://reactjs.org/ "null")
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-   **Styling:** [Tailwind CSS](https://tailwindcss.com/ "null")
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+-   **Backend & Auth:** [Firebase](https://firebase.google.com/ "null") (Firestore, Anonymous Auth)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+-   **AI/ML:** [Google Gemini API](https://ai.google.dev/ "null") (Multimodal Vision)
 
-## Learn More
+-   **Icons:** [Lucide React](https://lucide.dev/ "null")
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-   **Runtime:** [Node.js](https://nodejs.org/ "null")
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-   **Deployment:** [Vercel](https://vercel.com/ "null")
 
-### Code Splitting
+🚀 Getting Started
+------------------
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Follow these instructions to set up the project locally.
 
-### Analyzing the Bundle Size
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+-   Node.js (v14 or higher)
 
-### Making a Progressive Web App
+-   npm or yarn
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+-   A Firebase Project
 
-### Advanced Configuration
+-   A Google Gemini API Key
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Installation
 
-### Deployment
+1.  **Clone the repository**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    ```
+    git clone [https://github.com/yourusername/snapsplit.git](https://github.com/yourusername/snapsplit.git)
+    cd snapsplit
 
-### `npm run build` fails to minify
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2.  **Install dependencies**
+
+    ```
+    npm install
+
+    ```
+
+3.  **Configure Firebase & API Keys**
+
+    -   Create a `.env` file in the root directory.
+
+    -   Add your Gemini API Key:
+
+        ```
+        REACT_APP_GEMINI_API_KEY=your_gemini_api_key_here
+
+        ```
+
+    -   Open `src/App.js` and update the `firebaseConfig` object with your own Firebase project credentials:
+
+        ```
+        const firebaseConfig = {
+          apiKey: "YOUR_API_KEY",
+          authDomain: "your-app.firebaseapp.com",
+          projectId: "your-project-id",
+          // ... rest of config
+        };
+
+        ```
+
+4.  **Run the application**
+
+    ```
+    npm start
+
+    ```
+
+    The app will open at `http://localhost:3000`.
+
+🌐 Deployment
+-------------
+
+This project is optimized for deployment on **Vercel**.
+
+1.  Push your code to GitHub.
+
+2.  Import the project into Vercel.
+
+3.  Add the Environment Variable in Vercel Settings:
+
+    -   **Key:** `REACT_APP_GEMINI_API_KEY`
+
+    -   **Value:** `Your_Actual_Gemini_Key`
+
+4.  Deploy! 🚀
+
+🧪 How It Works
+---------------
+
+1.  **Create a Room:** Enter your name to start a session. You'll get a Room Code.
+
+2.  **Scan Receipt:** Upload a screenshot or photo of a bill. The AI will parse it.
+
+3.  **Invite Friends:** Share the code. Friends join and tap items to claim them.
+
+4.  **Settle Up:** View the "Breakdown" tab to see exactly what everyone owes, including their fair share of tax and discounts.
+
+📄 License
+----------
+
+This project is licensed under the MIT License - see the [LICENSE](https://www.google.com/search?q=LICENSE "null") file for details.
