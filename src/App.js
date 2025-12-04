@@ -7,13 +7,13 @@ import { getFirestore, doc, setDoc, getDoc, onSnapshot, updateDoc, arrayUnion } 
 // --- FIREBASE CONFIGURATION ---
 // TODO: Paste your actual keys from the Firebase Console here!
 const firebaseConfig = {
-  apiKey: "AIzaSyAR1__kkZROCwVt3JgKsvpmooKhdbz67_M",
-  authDomain: "snapsplit-18a5e.firebaseapp.com",
-  projectId: "snapsplit-18a5e",
-  storageBucket: "snapsplit-18a5e.firebasestorage.app",
-  messagingSenderId: "691065062228",
-  appId: "1:691065062228:web:ca1e44e5584330980f7ec1",
-  measurementId: "G-BRKZJG39XP"
+  apiKey: "XXX",
+  authDomain: "XXX",
+  projectId: "XXX",
+  storageBucket: "XXX",
+  messagingSenderId: "XXX",
+  appId: "XXX",
+  measurementId: "XXX"
 };
 
 // Initialize Firebase
